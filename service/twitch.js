@@ -10,7 +10,15 @@ export const getTwitchToken = async () => {
 }
 
 export const getPlayerInfo = async (twitchToken, username) => {
-  return await Axios.get(`https://api.twitch.tv/helix/streams?user_login=${username}`, {
+  let usernames = ''
+  username.forEach((usr, u) => {
+    if (u >= username.length - 1) {
+      usernames += `user_login=${usr}`
+    } else {
+      usernames += `user_login=${usr}&`
+    }
+  });
+  return await Axios.get(`https://api.twitch.tv/helix/streams?${usernames}`, {
     headers: {
       'Authorization': `Bearer ${twitchToken}`,
       'Client-Id': clientID
