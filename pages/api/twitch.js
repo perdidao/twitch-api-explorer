@@ -7,7 +7,6 @@ const handler = async (req, res) => {
   }
 
   const body = JSON.parse(req.body)
-  console.log(body)
 
   if (body.username === undefined || body.username === null) {
     res.status(400).send({ message: 'Não veio a porra do name' })
