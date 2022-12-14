@@ -31,7 +31,7 @@ export default function Home() {
   ] = useState([])
 
   useEffect(() => {
-    axios.post(`http://localhost:3000/api/twitch`, { "username": streams }).then((response) => {
+    axios.post(`/api/twitch`, { "username": streams }).then((response) => {
       const data = response.data
       let allStreams = []
       streams.map((stream) => {
