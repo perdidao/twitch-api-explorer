@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { StreamCard } from 'components/StreamCard/StreamCard'
 
 export default function Home() {
   const streams = [
@@ -15,8 +16,14 @@ export default function Home() {
     'liminhag0d',
     'barr4k',
     'leonadev',
-    'MenyeB'
+    'casimito',
+    'gaules'
   ]
+
+  const [
+    loading,
+    setLoading
+  ] = useState(true)
 
   const [
     onlineStreams,
@@ -25,14 +32,35 @@ export default function Home() {
 
   useEffect(() => {
     axios.post(`http://localhost:3000/api/twitch`, { "username": streams }).then((response) => {
-      setOnlineStreams(response.data)
+      const data = response.data
+      let allStreams = []
+      streams.map((stream) => {
+        const streamInfo = data.filter(d => d.user_name == stream)
+        allStreams.push({
+          title: stream,
+          live: streamInfo.length,
+          info: streamInfo[0]
+        })
+      })
+
+      allStreams.sort((a, b) => {
+        if (a.live) return -1
+        return 1
+      })
+
+      setLoading(false)
+      setOnlineStreams(allStreams)
     })
   }, [])
 
-  if (onlineStreams.length === 0) {
-    return (
-      <p>carregando</p>
-    )
+  const renderStreamList = () => {
+    if (loading) {
+      return (
+        <p>Loading</p>
+      )
+    }
+
+    return onlineStreams.map(s => <StreamCard key={s.title} stream={s} />)
   }
 
   return (
@@ -44,22 +72,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {onlineStreams.map(stream => {
-          return (
-            <div
-              key={stream.id}
-              className={styles.card}>
-              <h2>
-                <a
-                  href={`https://twitch.tv/${stream.user_name}`}
-                  target="_blank"
-                  rel='noreferrer'>{stream.user_login} {stream.type}
-                </a>
-              </h2>
-              <p>{stream.title}</p>
-            </div>
-          )
-        })}
+        {renderStreamList()}
       </main>
     </div>
   )
