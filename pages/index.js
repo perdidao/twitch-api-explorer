@@ -35,7 +35,7 @@ export default function Home() {
       const data = response.data
       let allStreams = []
       streams.map((stream) => {
-        const streamInfo = data.filter(d => d.user_name == stream)
+        const streamInfo = data.filter(d => d.user_login == stream)
         allStreams.push({
           title: stream,
           live: streamInfo.length,

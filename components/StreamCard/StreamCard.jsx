@@ -10,7 +10,6 @@ export const StreamCard = (props) => {
     return imageUrl.replace('{width}', '160').replace('{height}', '90')
   }
 
-  
   if (stream.live) {
     return (
       <div
