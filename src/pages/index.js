@@ -1,9 +1,16 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.scss'
-import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { StreamCard } from 'components/StreamCard/StreamCard'
+
+// Libs
+import axios from 'axios'
+
+// Nextjs
+import Head from 'next/head'
+
+// Components
+import { StreamCard } from 'src/components/StreamCard/StreamCard'
+
+// Styles
+import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   const streams = [
@@ -31,7 +38,7 @@ export default function Home() {
   ] = useState([])
 
   useEffect(() => {
-    axios.post(`/api/twitch`, { "username": streams }).then((response) => {
+    axios.post(`/api/streams/online`, { "username": streams }).then((response) => {
       const data = response.data
       let allStreams = []
       streams.map((stream) => {

@@ -1,0 +1,226 @@
+/* SCSS HEX */
+
+@function unit($multiplier: 1) {
+  $pixelSize: $multiplier * 4;
+  @return ($pixelSize / 16) * 1em;
+}
+
+// FONTS
+$primary: 'Poppins', sans-serif;
+$secondary: 'Oswald', sans-serif;
+
+$ui-1: #161724;
+$ui-2: #1C1D2C;
+$ui-3: #212335;
+$ui-4: #282A3E;
+$ui-5: #383B51;
+$ui-6: #40415A;
+$ui-7: #4D4F6E;
+$ui-8: #707297;
+
+$gray-0: #000000;
+$gray-1: #1f1f1f;
+$gray-2: #525252;
+$gray-3: #7a7a7a;
+$gray-4: #e0e0e0;
+
+$red-1: #FFE0E0;
+$red-2: #FABDBD;
+$red-3: #FC6973;
+$red-4: #FB4B56;
+$red-5: #F23641;
+$red-6: #DD2C2C;
+$red-7: #C31D1D;
+$red-8: #931A1A;
+$red: #F23641;
+
+$deep-orange-1: #FFE2DB;
+$deep-orange-2: #FFB6A3;
+$deep-orange-3: #F77445;
+$deep-orange-4: #F2612C;
+$deep-orange-5: #F04B19;
+$deep-orange-6: #DD370E;
+$deep-orange-7: #C2290A;
+$deep-orange-8: #961F0D;
+$deep-orange: #F04B19;
+
+$orange-1: #FAE6C8;
+$orange-2: #FFC17A;
+$orange-3: #F99339;
+$orange-4: #FF781F;
+$orange-5: #FA650F;
+$orange-6: #E15109;
+$orange-7: #C64006;
+$orange-8: #9D2F07;
+$orange: #FA650F;
+
+$yellow-1: #FAEDC8;
+$yellow-2: #FACF5A;
+$yellow-3: #FABB0F;
+$yellow-4: #FCA903;
+$yellow-5: #F29A02;
+$yellow-6: #DA7E07;
+$yellow-7: #BE6104;
+$yellow-8: #9D4807;
+$yellow: #FABB0F;
+
+$lime-1: #EBF0C9;
+$lime-2: #D0E063;
+$lime-3: #ABCB2A;
+$lime-4: #9CC00C;
+$lime-5: #8CA800;
+$lime-6: #7D9603;
+$lime-7: #647802;
+$lime-8: #57660A;
+$lime: #9CC00C;
+
+$light-green-1: #E5F5D7;
+$light-green-2: #AFEB7A;
+$light-green-3: #75D039;
+$light-green-4: #66C328;
+$light-green-5: #61B422;
+$light-green-6: #549F23;
+$light-green-7: #40871C;
+$light-green-8: #2D6F15;
+$light-green: #75D039;
+
+$green-1: #DCFADE;
+$green-2: #99F09F;
+$green-3: #3FD562;
+$green-4: #14CC4B;
+$green-5: #0AB844;
+$green-6: #0CA143;
+$green-7: #09863F;
+$green-8: #0C6435;
+$green: #14CC4B;
+
+$teal-1: #D2FAED;
+$teal-2: #8DEBCB;
+$teal-3: #37E6AC;
+$teal-4: #0DD3A5;
+$teal-5: #08C49E;
+$teal-6: #0BAD92;
+$teal-7: #08917F;
+$teal-8: #076960;
+$teal: #37E6AC;
+
+$cyan-1: #D7F5F5;
+$cyan-2: #8DEBEB;
+$cyan-3: #4BD3DD;
+$cyan-4: #0BC8D5;
+$cyan-5: #02B6CA;
+$cyan-6: #069BB2;
+$cyan-7: #047D95;
+$cyan-8: #03586D;
+$cyan: #0BC8D5;
+
+$blue-1: #DCEEFA;
+$blue-2: #9ED8FF;
+$blue-3: #61B3FA;
+$blue-4: #49A3FD;
+$blue-5: #2196FD;
+$blue-6: #1285F8;
+$blue-7: #056EE6;
+$blue-8: #0B4CAD;
+$blue: #2196FD;
+
+$indigo-1: #E0E7FF;
+$indigo-2: #BDCBFF;
+$indigo-3: #8999FA;
+$indigo-4: #727FF3;
+$indigo-5: #5968F8;
+$indigo-6: #4F54EE;
+$indigo-7: #4040E7;
+$indigo-8: #302999;
+$indigo: #727FF3;
+
+$deep-purple-1: #EDE0FF;
+$deep-purple-2: #D7BDFF;
+$deep-purple-3: #BE87FD;
+$deep-purple-4: #AE6CF9;
+$deep-purple-5: #9D55FC;
+$deep-purple-6: #942DFB;
+$deep-purple-7: #7C14D7;
+$deep-purple-8: #561490;
+$deep-purple: #AE6CF9;
+
+$purple-1: #FFE0FF;
+$purple-2: #F5BAF5;
+$purple-3: #DF74E7;
+$purple-4: #DA4EE4;
+$purple-5: #D537E6;
+$purple-6: #C61ECC;
+$purple-7: #AF1DAB;
+$purple-8: #6F1F6A;
+$purple: #D537E6;
+
+$pink-1: #FFE0ED;
+$pink-2: #F5ABC4;
+$pink-3: #FA6E9D;
+$pink-4: #F4528E;
+$pink-5: #EA3E72;
+$pink-6: #E22859;
+$pink-7: #CC1E47;
+$pink-8: #A11B32;
+$pink: #F4528E;
+
+$error: #ffadad;
+$error-light: #ffadad;
+$error-lighter: #ffadad;
+$error-dark: #f53130;
+$error-darker: #961824;
+
+$info: #a4bcf2;
+$info-light: #a4bcf2;
+$info-lighter: #a4bcf2;
+$info-dark: #308cf4;
+$info-darker: #1a49a1;
+
+$success: #d7e4a0;
+$success-light: #d7e4a0;
+$success-lighter: #d7e4a0;
+$success-dark: #8fb300;
+$success-darker: #627716;
+
+$warning: #efd9a7;
+$warning-light: #efd9a7;
+$warning-lighter: #efd9a7;
+$warning-dark: #fcbd00;
+$warning-darker: #977216;
+
+$text-error: #961824;
+$text-info: #1a49a1;
+$text-success: #627716;
+$text-warning: #977216;
+
+$opacity-000: 0;
+$opacity-100: 0.04;
+$opacity-200: 0.08;
+$opacity-300: 0.16;
+$opacity-400: 0.24;
+$opacity-500: 0.32;
+$opacity-600: 0.48;
+$opacity-700: 0.64;
+$opacity-800: 0.8;
+
+$light-0: rgba(255, 255, 255, 0);
+$light-1: rgba(255, 255, 255, 0.04);
+$light-2: rgba(255, 255, 255, 0.08);
+$light-3: rgba(255, 255, 255, 0.16);
+$light-4: rgba(255, 255, 255, 0.24);
+$light-5: rgba(255, 255, 255, 0.32);
+$light-6: rgba(255, 255, 255, 0.48);
+$light-7: rgba(255, 255, 255, 0.64);
+$light-8: rgba(255, 255, 255, 0.8);
+
+$dark-0: rgba(0, 0, 0, 0);
+$dark-1: rgba(0, 0, 0, 0.04);
+$dark-2: rgba(0, 0, 0, 0.08);
+$dark-3: rgba(0, 0, 0, 0.16);
+$dark-4: rgba(0, 0, 0, 0.24);
+$dark-5: rgba(0, 0, 0, 0.32);
+$dark-6: rgba(0, 0, 0, 0.48);
+$dark-7: rgba(0, 0, 0, 0.64);
+$dark-8: rgba(0, 0, 0, 0.8);
+
+$highlight: $blue-7;

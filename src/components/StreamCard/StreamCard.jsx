@@ -1,4 +1,7 @@
+// Nextjs
 import Image from 'next/image'
+
+// Styles
 import styles from './StreamCard.module.scss'
 
 export const StreamCard = (props) => {
@@ -41,7 +44,7 @@ export const StreamCard = (props) => {
     <div
       key={stream.title}
       className={styles.StreamCard}
-      onClick={() => { window.location.href  = `https://twitch.tv/${stream.title}` }}>
+      onClick={() => { window.open(`https://twitch.tv/${stream.title}`, '_blank') }}>
       <h2 className={styles.StreamCard__title}>
         🔴 {stream.title}
       </h2>

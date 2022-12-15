@@ -5,6 +5,10 @@ const nextConfig = {
   images: {
     domains: ['static-cdn.jtvnw.net'],
   },
+  sassOptions: {
+    includePaths: ['./src'],
+    prependData: `@import "~@styles/ds.scss";`,
+  }
 }
 
 module.exports = nextConfig

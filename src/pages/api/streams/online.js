@@ -1,4 +1,4 @@
-import { getTwitchToken, getPlayerInfo } from '@service/twitch'
+import { getTwitchToken, getPlayerInfo } from '@services/twitch'
 
 const handler = async (req, res) => {
   if (req.method !== 'POST') {

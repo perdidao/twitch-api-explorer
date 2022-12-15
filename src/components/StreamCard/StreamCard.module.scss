@@ -1,26 +1,7 @@
-/* SCSS HEX */
-$cultured: #f8f9faff;
-$cultured-2: #e9ecefff;
-$gainsboro: #dee2e6ff;
-$light-gray: #ced4daff;
-$cadet-blue-crayola: #adb5bdff;
-$sonic-silver: #6c757dff;
-$davys-grey: #495057ff;
-$onyx: #343a40ff;
-$eerie-black: #212529ff;
-
-@function unit($multiplier: 1) {
-  @return ($multiplier * 4) * 1px;
-}
-
-// FONTS
-$primary: 'Poppins', sans-serif;
-$secondary: 'Oswald', sans-serif;
-
 .StreamCard {
   padding: unit(5);
   border-radius: unit();
-  background-color: $onyx;
+  background-color: $ui-3;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -54,7 +35,7 @@ $secondary: 'Oswald', sans-serif;
   }
 
   &__title {
-    color: $cultured-2;
+    color: $light-8;
     font-size: unit(6);
     line-height: 1;
     margin: 0 0 unit(2);
@@ -63,13 +44,13 @@ $secondary: 'Oswald', sans-serif;
   }
 
   &__description {
-    color: $light-gray;
+    color: $light-8;
     font-size: unit(3);
     margin: 0;
   }
 
   &__tagline {
-    color: $light-gray;
+    color: $light-8;
     font-size: unit(3);
     margin: 0;
   }
