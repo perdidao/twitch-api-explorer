@@ -50,9 +50,14 @@ export default function Home() {
         })
       })
 
-      allStreams.sort((a, b) => {
+      allStreams.sort((a) => {
         if (a.live) return -1
         return 1
+      })
+
+      allStreams.sort((a, b) => {
+        if (!a.live || !b.live) return 1
+        if (a.info.viewer_count > b.info.viewer_count) return -1
       })
 
       setLoading(false)
